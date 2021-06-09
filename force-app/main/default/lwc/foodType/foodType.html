@@ -1,0 +1,20 @@
+<template>
+   <article style="height:40rem;" class="slds-card">
+      <div class="slds-m-around_small slds-clearfix">
+         <a href="#" data-id={index} onclick={handleRecommended}>
+      <span class="slds-float_right records" tabindex="0" style="color:black; font-size:120%">Recommended</span>
+   </a>
+   </div>
+<template if:true={TypePicklistValues.data}>
+        <template for:each={TypePicklistValues.data.values} for:item="item" for:index="index">
+            <div key={item.value}>
+                <div class="slds-m-around_small slds-clearfix">
+                   <a href="#" data-id={index} onclick={handleClick}>
+                      <span class="slds-float_right records" tabindex="0" style="color:black; font-size:120%">{item.label}</span>
+                   </a>
+                </div>
+              </div>
+            </template>
+</template>
+</article>
+</template>

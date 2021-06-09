@@ -1,0 +1,30 @@
+<template>
+   <div class="slds-m-around_small">
+      <lightning-input placeholder="type here..." type="search" name="searchCandidates"
+          variant="label-hidden" label="searchCandidates" onchange={handleKeyChange}
+          is-loading={issearching}></lightning-input>
+  </div>
+  <div style="height:22.7rem;" class="slds-scrollable_y">
+      <template for:each={contacts} for:item="contact" for:index="index">
+          <div key={contact.Id}>
+            <div class="slds-m-around_small" >
+               <a href="#" data-id={index} onclick={handleClick}>
+                  <span class="records" tabindex="0" style="color: #2fbd8e; font-size:120%">{contact.Name}</span>
+               </a>
+            </div>
+          </div>
+      </template>
+</div>
+<template if:true={seeMore}>
+      <div class="slds-m-around_small slds-float_right" style="position: relative;bottom: 0; right: 0;">
+          <a href="#" onclick={handleNext}>
+              <span style="color: #006400; font-size:120%">Next &raquo;</span>
+          </a>
+      </div>
+      <div class="slds-m-around_small slds-float_left" style="position: relative;bottom: 0; left: 0;">
+        <a href="#" onclick={handlePrevious}>
+            <span style="color: #006400; font-size:120%">&laquo; Previous</span>
+        </a>
+    </div>
+  </template>
+</template>

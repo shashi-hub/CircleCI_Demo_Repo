@@ -1,0 +1,10 @@
+.spanstyle span {
+    font-size: 1.7rem;
+    color: green;
+    font-weight: bold;
+}
+
+.spanstyle p {
+    color: grey;
+    font-size: 0.9rem;
+}

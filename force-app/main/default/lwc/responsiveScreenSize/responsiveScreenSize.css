@@ -1,0 +1,19 @@
+.container{
+    width:960px;
+    margin: 0px auto;
+}
+.left-column{
+    width: 700px;  background: blue; 
+}
+.right-column{
+    width: 260px;  background: orange;
+}
+img{
+    height:20vw;
+    width:100vw;
+}
+@media screen and (max-width: 979px){ 
+    .right-column {
+        color:red;
+    }
+}

@@ -1,0 +1,18 @@
+<template>
+              <div class="slds-wrap" >
+                <img style="display:flex; " class=" img mytransition" src={foodItem.Picture__c} alt="Profile photo" />
+                <p class="slds-text-heading_small slds-m-top_x-small"><b>{foodItem.Name}</b></p>
+                <p class="slds-text-heading_x-small slds-m-top_x-small">{foodItem.Food_Type__c}</p>
+                <p style="float:left;" class="slds-text-heading_x-small slds-m-top_x-small">&#8377; &nbsp;{foodItem.Price__c}</p>
+                <template if:true={addButton}>
+               <button  style="float:right;" onclick={addToCart} class="button slds-text-heading_x-small" >ADD</button>
+              </template>
+<template if:true={quantityButton}>
+               <div style="float:right;" class="quantity">
+                <a href="#" onclick={minus} class="quantity__minus"><span>&#45;</span></a>
+                <input name="quantity" disabled type="text" class="quantity__input" value={inputValue}>
+                <a href="#" onclick={plus} class="quantity__plus">&#43;</a>
+                </div>
+              </template>
+</div>
+</template>

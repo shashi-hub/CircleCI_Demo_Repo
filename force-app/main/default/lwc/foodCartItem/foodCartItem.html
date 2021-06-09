@@ -1,0 +1,13 @@
+<template>
+    <div class="slds_wrap slds-m-around_small container">
+        <p style="display: inline-block; width: 50%;">{cartItem.Name}</p>
+        <div style="display: inline-block; width: 30%; text-align: -webkit-right;">
+        <div class="quantity">
+            <a href="#" onclick={minus} class="quantity__minus"><span>&#45;</span></a>
+            <input name="quantity" disabled type="text" class="quantity__input" value={inputValue}>
+            <a href="#" onclick={plus} class="quantity__plus">&#43;</a>
+            </div>
+            </div>
+            <p style="display: inline-block; width: 20%; text-align: -webkit-right;">&#8377;&nbsp;{cartItem.Price__c}</p>
+</div>
+</template>

@@ -1,0 +1,15 @@
+.records:focus {
+    color: orange !important;
+    outline: none;
+    font-weight: bold;
+}
+
+.records:hover,
+.records:active {
+    font-size: 150% !important;
+    text-decoration: none !important;
+}
+
+a {
+    text-decoration: none !important;
+}

@@ -1,0 +1,20 @@
+<template>
+    <div if:true={showCalendar}>
+        <c-date-picker event-dates={eventDates}></c-date-picker>
+    </div>
+    <lightning-card class="slds-card__body_inner " title="Upcoming Appointments">
+    <div class="slds-m-around_small slds-grid slds-grid_vertical">
+        <template for:each={events} for:item="event">
+        <div onclick={handleClick}  key={event.Id} style="border-radius: 7px;background-color:	rgb(246 246 246);
+        position:relative" class="slds-m-top_small grow">
+            <p onclick={handleClick} data-item={event.Id} class="slds-m-top_small slds-m-left_small">  <lightning-formatted-date-time onclick={handleClick} data-item={event.Id} value={event.StartDateTime} month="short" day="2-digit" 
+                hour="2-digit" time-zone="Asia/Kolkata" minute="2-digit"></lightning-formatted-date-time> -  <lightning-formatted-date-time onclick={handleClick} data-item={event.Id} value={event.EndDateTime} month="short" day="2-digit" 
+                hour="2-digit" time-zone="Asia/Kolkata" minute="2-digit"></lightning-formatted-date-time></p>
+            <p onclick={handleClick} data-item={event.Id} class=" slds-m-left_small" style="font-size: large;"><b onclick={handleClick} data-item={event.Id}>{event.Subject}</b></p>
+            <p onclick={handleClick} data-item={event.Id}  class="slds-m-bottom_small slds-m-left_small" ><lightning-icon size="x-small" icon-name="utility:user" alternative-text="Approved" title="Approved"></lightning-icon>
+                &nbsp; {event.AssignedTo} &nbsp;&nbsp; <lightning-icon size="x-small" icon-name="utility:checkin" alternative-text="Approved" title="Approved"></lightning-icon>&nbsp;{event.Location}</p>
+        </div>
+    </template>
+        </div>
+        </lightning-card>
+</template>

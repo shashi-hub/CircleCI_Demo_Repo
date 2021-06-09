@@ -1,0 +1,19 @@
+<template>
+    <article class = "slds-card">
+      <div style="display:flex;" class="slds-wrap">
+          <template if:true={foodItems}>
+          <template for:each={foodItems} for:item="foodItem" for:index="index">
+            <c-food-detail
+            key={foodItem.Id}
+            food-item={foodItem}
+            input-value={foodItem.quantity}
+            quantity-button={foodItem.quantityButton}
+            add-button={foodItem.addButton}
+            class="slds-m-around_small"
+        >
+        </c-food-detail>
+          </template>
+</template>
+</div>
+</article>
+</template>

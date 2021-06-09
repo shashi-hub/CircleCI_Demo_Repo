@@ -1,0 +1,35 @@
+<template>
+    <article class="slds-card ">
+        <template if:true={cartEmpty}>
+        <img src="https://www.nicepng.com/png/detail/322-3224210_your-cart-is-currently-empty-empty-shopping-cart.png" alt="Profile photo" />
+    </template>
+<template if:true={cart}>
+    <p class="slds-text-heading_large slds-m-left_small slds-m-top_small"><b>Cart</b></p>
+    <p class="slds-text-heading_x-small slds-m-left_small slds-m-top_xxx-small" style="color: grey;"><b>{totalItem}&nbsp;ITEMS</b></p>
+    <div class="slds-scrollable_y" style="height: 7rem; ">
+    <template if:true={cartItems}>
+    <template for:each={cartItems} for:item = "cartItem" for:index="index">
+   <c-food-cart-item
+   key={cartItem.Id}
+   cart-item={cartItem}
+   index={index}
+   onadd={increaseCount}
+   onremove={decreaseCount}
+   input-value={cartItem.quantity}
+   ></c-food-cart-item>
+</template>
+</template>
+</div>
+<div>
+    <p style="display: inline-block; width: 45%;" class="slds-text-heading_medium slds-m-left_small slds-m-top_xxx-small"><b>Subtotal</b></p>
+    <p style="display: inline-block; width: 45%; text-align: -webkit-right;" class="slds-m-right_small slds-text-heading_small">&#8377;&nbsp;{subTotal}</p>
+</div>
+<div class="slds_wrap">
+    <p class="slds-text-heading_small slds-m-left_small slds-m-top_xxx-small" style="color: grey;">Extra charges may apply</p>
+</div>
+<div class="checkout">
+    Checkout →
+</div>
+</template>
+</article>
+</template>

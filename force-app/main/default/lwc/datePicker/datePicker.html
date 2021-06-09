@@ -1,0 +1,37 @@
+<template>
+    <div class="dates">
+        <div class="buttonContainer">
+            <button class="link" type="button" onclick={goToday}>
+                Today
+            </button>
+            <p>{formattedSelectedDate}</p>
+            <!-- <p class="bold">{year}</p> -->
+        </div>
+        <div class="buttonContainer">
+            <lightning-button-icon  class="margin" icon-name="utility:chevronleft"  size="large"  variant="bare" onclick={previousMonth} alternative-text="Previous month" title="Previous month"></lightning-button-icon>
+            <span class="bold">{month}&nbsp; <lightning-formatted-date-time class="bold" value={dateContext} year="2-digit"></lightning-formatted-date-time></span>
+            <lightning-button-icon  class="margin" icon-name="utility:chevronright"  size="large"  variant="bare" onclick={nextMonth} alternative-text="Next month" title="Next month"></lightning-button-icon>
+        </div>
+        <ul class="header">
+            <li>Sun</li>
+            <li>Mon</li>
+            <li>Tue</li>
+            <li>Wed</li>
+            <li>Thu</li>
+            <li>Fri</li>
+            <li>Sat</li>
+        </ul>
+        <ul class="datePickerHolder">
+            <template for:each={dates} for:item="date">
+                <li
+                    key={date.formatted}
+                    class={date.className}
+                    data-date={date.formatted}
+                    onclick={setSelected}
+                >
+                    {date.text}
+                </li>
+            </template>
+        </ul>
+    </div>
+</template> 

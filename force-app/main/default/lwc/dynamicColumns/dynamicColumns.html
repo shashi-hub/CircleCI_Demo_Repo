@@ -1,0 +1,17 @@
+<template>
+    <lightning-card title="Dynamic Columns" icon-name="action:fallback">
+        <div class="slds-m-around_medium">
+            <lightning-input label="Number of columns" onchange={calculateDivisions}>
+            </lightning-input>
+        </div>
+        <div class=" slds-m-around_medium slds-border_top"></div>
+        <div class="slds-grid slds-wrap">
+            <template for:each={digits} for:item="digit">
+                <div key={digit} class="slds-wrap slds-p-top_x-small dynamicColumn">
+                    <span>{digit}</span>
+                </div>
+            </template>
+</div>
+<div class="slds-m-around_medium slds-border_bottom"></div>
+</lightning-card>
+</template>

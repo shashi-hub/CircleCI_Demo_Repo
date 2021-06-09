@@ -1,0 +1,33 @@
+.quantity__input {
+    width: 32px;
+    height: 19px;
+    margin: 0;
+    border: 0;
+    padding: 0;
+    background-color: white;
+    text-align: center;
+    color: green;
+}
+
+.quantity__minus,
+.quantity__plus {
+    display: inline-block;
+    margin: 0;
+    text-decoration: none;
+    text-align: center;
+    font-size: large;
+}
+
+.quantity {
+    height: 30px;
+    width: 70px;
+    border-top: 1px solid #dee0ee;
+    border-bottom: 1px solid #dee0ee;
+    border-left: 1px solid #dee0ee;
+    border-right: 1px solid #dee0ee;
+    text-align: center;
+}
+
+.container {
+    overflow: hidden;
+}
